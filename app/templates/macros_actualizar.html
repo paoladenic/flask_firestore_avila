@@ -1,0 +1,8 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% macro render_todo(resultado, update_form) %} 
+    <li class="list-group-item">
+
+        {{ wtf.quick_form(update_form, action=url_for('actualizar', id_documento=resultado.id_documento)) }}
+    </li>
+{% endmacro %}

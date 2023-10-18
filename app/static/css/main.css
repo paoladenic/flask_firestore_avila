@@ -1,0 +1,35 @@
+html * {
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    padding: 0 0.5rem;
+  }
+  
+h1 {
+    color: #5c5751;
+    padding: 2rem;
+}
+
+h2 {
+    font-weight: bold;
+    color: #5c5751;
+    padding: 2rem;
+}
+
+h3 {
+    color: #e78e22;
+    font-weight: bold;
+    padding: 2rem;
+}
+
+nav navbar-nav {
+    font-family: sans-serif;
+    padding: 2rem;
+}
+
+img {
+    max-width: 35px;
+}
+

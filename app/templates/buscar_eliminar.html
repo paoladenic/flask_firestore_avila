@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import 'macros_eliminar.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Eliminar Registro  
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Eliminar Registro</h1>
+
+        {{ wtf.quick_form(buscar_form, method="POST", action=url_for('buscar_eliminar')) }}
+    </div>    
+
+    <ul class="list-group">
+        {% for resultado in resultados %}
+            {{ macros.render_todo(resultado, delete_form) }}
+        {% endfor %}
+    </ul>
+    <div class="d-flex justify-content-end">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+{% endblock %}

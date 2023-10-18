@@ -1,0 +1,54 @@
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% macro render_todo(resultado, update_form) %} 
+    <li class="list-group-item">
+        <table>
+            <tr>
+                <td>ID Orden: </td>
+                <td>{{ resultado.id_orden }}</td>
+            </tr>
+            <tr>
+                <td>Fecha: </td>
+                <td>{{ resultado.fecha }}</td>
+            </tr>
+            <tr>
+                <td>Nombre del Cliente: </td>
+                <td>{{ resultado.nombre_cliente }}</td>
+            </tr>
+            <tr>
+                <td>Email del Cliente: </td>
+                <td>{{ resultado.email_cliente }}</td>
+            </tr>
+            <tr>
+                <td>Teléfono del Cliente: </td>
+                <td>{{ resultado.telefono_cliente }}</td>
+            </tr>
+            <tr>
+                <td>DNI/CIF del Cliente: </td>
+                <td>{{ resultado.doc_cliente }}</td>
+            </tr>
+            <tr>
+                <td>Tipo de Vehículo: </td>
+                <td>{{ resultado.tipo_vehiculo }}</td>
+            </tr>
+            <tr>
+                <td>Marca/Modelo/Color:</td>
+                <td>{{ resultado.marca_mod }}</td>
+            </tr>
+            <tr>
+                <td>Status del Trabajo: </td>
+                <td>{{ resultado.status_trabajo }}</td>
+            </tr>
+            <tr>
+                <td>Descripción del Trabajo: </td>
+                <td>{{ resultado.trabajo }}</td>
+            </tr>
+            <tr>
+                <td>Observaciones: </td>
+                <td>{{ resultado.observaciones }}</td>
+            </tr>
+        </table>
+
+        {{ wtf.quick_form(update_form, action=url_for('actualizar', id_documento=resultado.id_documento)) }}
+    </li>
+{% endmacro %}

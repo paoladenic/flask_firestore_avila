@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Inicio
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3>Gestión de registros del taller de Avila Bikes</h3>
+        {{ wtf.quick_form(ingreso_form) }}
+    </div>
+
+{% endblock %}

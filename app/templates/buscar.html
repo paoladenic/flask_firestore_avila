@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Buscar Registro  
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Búsqueda de Registros</h1>
+
+        {{ wtf.quick_form(buscar_form, method="POST", action=url_for('buscar')) }}
+    </div>  
+    
+    {% if resultados %}
+    <h3>Resultados:</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Orden</th>
+                    <th>Fecha</th>
+                    <th>Nombre del Cliente</th>
+                    <th>Email del Cliente</th>
+                    <th>Teléfono del Cliente</th>
+                    <th>DNI/CIF del Cliente</th>
+                    <th>Tipo de Vehículo</th>
+                    <th>Marca/Modelo/Color</th>
+                    <th>Status del Trabajo</th>
+                    <th>Descripción del Trabajo</th>
+                    <th>Observaciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for resultado in resultados %}
+                <tr>
+                    <td>{{ resultado.id_orden }}</td>
+                    <td>{{ resultado.fecha }}</td>
+                    <td>{{ resultado.nombre_cliente }}</td>
+                    <td>{{ resultado.email_cliente }}</td>
+                    <td>{{ resultado.telefono_cliente }}</td>
+                    <td>{{ resultado.doc_cliente }}</td>
+                    <td>{{ resultado.tipo_vehiculo }}</td>
+                    <td>{{ resultado.marca_mod }}</td>
+                    <td>{{ resultado.status_trabajo }}</td>
+                    <td>{{ resultado.trabajo }}</td>
+                    <td>{{ resultado.observaciones }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+    <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+{% endblock %}

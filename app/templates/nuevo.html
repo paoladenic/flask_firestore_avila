@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Nuevo Registro  
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Nuevo Registro</h2>
+
+        {{ wtf.quick_form(nuevo_form) }}
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+
+{% endblock %}

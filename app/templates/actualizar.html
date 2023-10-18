@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import 'macros_actualizar.html' as macros %}
+
+{% block title %}
+    {{ super() }}
+    Actualizar Registro
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Actualizar Registro</h1>
+
+        <ul class="list-group">
+            {{ macros.render_todo(resultado, update_form) }}
+        </ul>
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Informe 
+{% endblock %}
+
+{% block content %}
+    <h1>Informe Registros</h1>
+    {{ wtf.quick_form(informe_form, method="POST", action=url_for('informe')) }}
+    
+    {% if resultados %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Orden</th>
+                <th>Fecha</th>
+                <th>Nombre del Cliente</th>
+                <th>Email del Cliente</th>
+                <th>Teléfono del Cliente</th>
+                <th>DNI/CIF del Cliente</th>
+                <th>Tipo de Vehículo</th>
+                <th>Marca/Modelo/Color</th>
+                <th>Status del Trabajo</th>
+                <th>Descripción del Trabajo</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for resultado in resultados %}
+            <tr>
+                <td>{{ resultado.id_orden }}</td>
+                <td>{{ resultado.fecha }}</td>
+                <td>{{ resultado.nombre_cliente }}</td>
+                <td>{{ resultado.email_cliente }}</td>
+                <td>{{ resultado.telefono_cliente }}</td>
+                <td>{{ resultado.doc_cliente }}</td>
+                <td>{{ resultado.tipo_vehiculo }}</td>
+                <td>{{ resultado.marca_mod }}</td>
+                <td>{{ resultado.status_trabajo }}</td>
+                <td>{{ resultado.trabajo }}</td>
+                <td>{{ resultado.observaciones }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}

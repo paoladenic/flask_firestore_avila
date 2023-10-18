@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import 'macros_actualizar_buscar.html' as macros %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Actualizar Registro  
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Actualizar Registro</h1>
+
+        {{ wtf.quick_form(buscar_form, method="POST", action=url_for('buscar_actualizar')) }}
+    </div>    
+
+    <ul class="list-group">
+        {% for resultado in resultados %}
+            {{ macros.render_todo(resultado, update_form) }}
+        {% endfor %}
+    </ul>
+    <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+        <form action="{{ url_for('hello') }}" method="get">
+            <button type="submit" class="btn btn-primary">Volver</button>
+        </form>
+    </div>
+{% endblock %}

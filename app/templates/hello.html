@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block title %}
+    {{ super() }}
+    Bienvenid@
+{% endblock %}
+
+{% block content %}
+    {% if username %}
+        <h1>Bienvenid@, {{ username | capitalize }}</h1>
+    {% endif %}
+
+    <div class="container">
+        <h2>Selecciona una opción para continuar:</h2>
+
+        <form method="POST" action="{{ url_for('hello') }}">
+            <button type="submit" class="btn btn-primary mb-2" name="crear">Crear Registro</button>
+            <button type="submit" class="btn btn-primary mb-2" name="buscar">Buscar Registro</button>
+            <button type="submit" class="btn btn-primary mb-2" name="update">Actualizar Registro</button>
+            <button type="submit" class="btn btn-primary mb-2" name="delete">Eliminar Registro</button>
+            <button type="submit" class="btn btn-primary mb-2" name="informe">Generar Informe</button>
+        </form>
+    </div>
+
+{% endblock %}
