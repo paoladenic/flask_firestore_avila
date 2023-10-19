@@ -4,7 +4,7 @@ Esta aplicación es una herramienta de gestión de registros de trabajos diseña
 
 ## Deploy:
 El proyecto se encuentra desplegado en Google Cloud, y esta es la url: 
-https://mefaltaesto.com/
+**https://flask-todo-399720.ey.r.appspot.com/**
 
 
 ## Tecnologías Utilizadas:
