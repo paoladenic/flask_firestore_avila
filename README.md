@@ -2,7 +2,7 @@
 
 Esta aplicación es una herramienta de gestión de registros de trabajos diseñada para el taller de bicicletas Avila Bikes. Esta creada con Flask y utiliza la base de datos Firestore que permite a los usuarios agregar, buscar, eliminar, editar registros y generar informes relacionados con los servicios de reparación y mantenimiento de bicicletas ofrecidos por el taller. 
 
-## Deploy:
+## Deployment:
 El proyecto se encuentra desplegado en Google Cloud, y esta es la url: 
 **https://flask-todo-399720.ey.r.appspot.com/**
 
